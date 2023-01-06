@@ -390,6 +390,29 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+        <div class="modal fade" tabindex="-1" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Perhatian</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="text-align: justify;">
+                        <p>Untuk sementara waktu aplikasi ini <span class="text-danger">tidak bisa</span> melakukan
+                            diagnosis penyakit asma dikarenakan
+                            <span class="text-primary">Heroku</span> selaku penyedia layanan web service menghentikan
+                            layanan gratis sehingga model machine learning tidak dapat digunakan.
+                        </p>
+                        <h3 class="text-center">&#128546 &#128546 &#128546</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- JavaScript Libraries -->
@@ -406,6 +429,10 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
+        $(window).on('load', function () {
+            $('#myModal').modal('show');
+        });
+
         $('#bersih').on('click', function (e) {
             e.preventDefault();
             $('html,body').animate({ scrollTop: $('#diagnosis').offset().top }, 'fast');
